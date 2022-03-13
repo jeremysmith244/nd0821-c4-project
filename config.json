@@ -7,5 +7,6 @@
   "log_fname": "latestscore.txt",
   "model_fname": "trainedmodel.joblib",
   "traindata_fname": "finaldata.csv",
-  "testdata_fname": "testdata.csv"
+  "testdata_fname": "testdata.csv",
+  "cm_fname": "confusion_matrix.png"
 }
