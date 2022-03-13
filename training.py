@@ -13,8 +13,8 @@ import json
 with open('config.json','r') as f:
     config = json.load(f) 
 
-dataset_csv_path = os.path.join(config['output_folder_path'], 'finaldata.csv') 
-model_path = os.path.join(config['output_model_path'], 'trainedmodel.joblib') 
+dataset_csv_path = os.path.join(config['output_folder_path'], config["traindata_fname"]) 
+model_path = os.path.join(config['output_model_path'], config['model_fname']) 
 
 
 #################Function for training the model

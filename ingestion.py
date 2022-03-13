@@ -14,7 +14,8 @@ with open('config.json','r') as f:
 
 input_folder_path = config['input_folder_path']
 output_folder_path = config['output_folder_path']
-
+dataset_csv_path = os.path.join(config['output_folder_path'], config["traindata_fname"])
+file_list_path = os.path.join(config['output_folder_path'], config['datalist_fname']) 
 
 
 #############Function for data ingestion
@@ -31,8 +32,8 @@ def merge_multiple_dataframe():
         else:
             summary = summary.append(pd.read_csv(file), ignore_index=True)
     summary = summary.drop_duplicates()
-    summary.to_csv(os.path.join(output_folder_path, 'finaldata.csv'))
-    with open(os.path.join(output_folder_path, 'ingestedfiles.txt'), 'w') as f:
+    summary.to_csv(dataset_csv_path)
+    with open(file_list_path, 'w') as f:
         for line in ingested:
             f.write(line + '\n')
 
