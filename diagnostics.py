@@ -44,7 +44,7 @@ def model_predictions(data):
     return log.predict(X)
 
 ##################Function to get summary statistics
-def dataframe_summary():
+def dataframe_summary(dataset_csv_path):
     #calculate summary statistics here
     data = pd.read_csv(dataset_csv_path)
     for col in data.columns:
@@ -80,7 +80,7 @@ def outdated_packages_list():
 if __name__ == '__main__':
     data = pd.read_csv(dataset_csv_path)
     model_predictions(data)
-    dataframe_summary()
+    dataframe_summary(dataset_csv_path)
     execution_time()
     outdated_packages_list()
 

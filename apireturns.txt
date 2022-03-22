@@ -1,0 +1,40 @@
+[0 1 1 1 1]
+0.5714285714285715
+[lastmonth_activity       76.6
+lastyear_activity      3100.4
+number_of_employees     227.2
+exited                    0.6
+dtype: float64, lastmonth_activity      34.0
+lastyear_activity      675.0
+number_of_employees     25.0
+exited                   1.0
+dtype: float64, lastmonth_activity       96.139482
+lastyear_activity      5232.801907
+number_of_employees     433.713846
+exited                    0.547723
+dtype: float64, [0.0, 0.0, 0.0, 0.0]]
+[0.5581598999999997, 1.4391898000000012]
+            package current_version latest_version
+0             click           7.1.2          8.0.4
+1            cycler          0.10.0         0.11.0
+2             Flask           1.1.2          2.0.3
+3          gunicorn          20.0.4         20.1.0
+4      itsdangerous           1.1.0          2.1.1
+5            Jinja2          2.11.3          3.0.3
+6            joblib           1.0.1          1.1.0
+7        kiwisolver           1.3.1          1.4.0
+8        MarkupSafe           1.1.1          2.1.1
+9        matplotlib           3.3.4          3.5.1
+10            numpy          1.20.1         1.22.3
+11           pandas           1.2.2          1.4.1
+12           Pillow           8.1.0          9.0.1
+13        pyparsing           2.4.7          3.0.7
+14  python-dateutil           2.8.1          2.8.2
+15             pytz          2021.1         2022.1
+16     scikit-learn          0.24.1          1.0.2
+17            scipy           1.6.1          1.8.0
+18          seaborn          0.11.1         0.11.2
+19              six          1.15.0         1.16.0
+20          sklearn             0.0            0.0
+21    threadpoolctl           2.1.0          3.1.0
+22         Werkzeug           1.0.1          2.0.3

@@ -1,10 +1,9 @@
 from flask import Flask, session, jsonify, request
 import pandas as pd
 import numpy as np
-import pickle
-import create_prediction_model
-import diagnosis 
-import predict_exited_from_saved_model
+from diagnostics import model_predictions
+from scoring import score_model
+from diagnostics import dataframe_summary, execution_time, outdated_packages_list
 import json
 import os
 
@@ -23,28 +22,35 @@ prediction_model = None
 
 
 #######################Prediction Endpoint
-@app.route("/prediction", methods=['POST','OPTIONS'])
+@app.route("/prediction", methods=['GET','OPTIONS'])
 def predict():        
     #call the prediction function you created in Step 3
-    return #add return value for prediction outputs
+    data_path = request.args.get('data_path')
+    data_file = pd.read_csv(data_path)
+    return str(model_predictions(data_file))
 
 #######################Scoring Endpoint
 @app.route("/scoring", methods=['GET','OPTIONS'])
-def stats():        
+def score():        
     #check the score of the deployed model
-    return #add return value (a single F1 score number)
+    data_path = request.args.get('data_path')
+    data_file = pd.read_csv(data_path)
+    f1 = score_model(data_file)
+    return str(f1)
 
 #######################Summary Statistics Endpoint
 @app.route("/summarystats", methods=['GET','OPTIONS'])
 def stats():        
     #check means, medians, and modes for each column
-    return #return a list of all calculated summary statistics
+    sum_stat = dataframe_summary(request.args.get('data_path'))
+    return str(sum_stat)
 
 #######################Diagnostics Endpoint
 @app.route("/diagnostics", methods=['GET','OPTIONS'])
-def stats():        
-    #check timing and percent NA values
-    return #add return value for all diagnostics
+def diagnose():        
+    times = execution_time()
+    versions = outdated_packages_list()
+    return str(times) + '\n' + str(versions)
 
 if __name__ == "__main__":    
     app.run(host='0.0.0.0', port=8000, debug=True, threaded=True)

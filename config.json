@@ -8,5 +8,7 @@
   "model_fname": "trainedmodel.joblib",
   "traindata_fname": "finaldata.csv",
   "testdata_fname": "testdata.csv",
-  "cm_fname": "confusion_matrix.png"
+  "cm_fname": "confusion_matrix.png",
+  "api_fname": "api_results.csv",
+  "api_save": "apireturns.txt"
 }
